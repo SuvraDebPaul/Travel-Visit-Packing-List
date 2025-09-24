@@ -13,7 +13,7 @@ function App() {
   }
 
   function handelDeleteItem(id) {
-    console.log(id);
+    //console.log(id);
     setItems((items) => items.filter((item) => item.id !== id));
   }
   function handleToggleItem(id) {
@@ -23,6 +23,9 @@ function App() {
       )
     );
   }
+  function handelClearList() {
+    setItems([]);
+  }
   return (
     <>
       <Logo />
@@ -31,6 +34,7 @@ function App() {
         items={items}
         onDeleteItem={handelDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handelClearList}
       />
       <Status items={items} />
     </>
